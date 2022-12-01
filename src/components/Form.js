@@ -33,9 +33,9 @@ class Form extends Component {
           <option value="raro">raro</option>
           <option value="muito raro">muito raro</option>
         </select>
-        <input 
-        type='checkbox'
-        data-testid="trunfo-input"
+        <input
+          type="checkbox"
+          data-testid="trunfo-input"
         />
         <button
           data-testid="save-button"
