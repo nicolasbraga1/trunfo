@@ -12,6 +12,7 @@ class App extends React.Component {
     cardImage: '',
     cardRare: '',
     isSaveButtonDisabled: true,
+    card: [],
   };
 
   validateBtn = () => {
@@ -36,6 +37,29 @@ class App extends React.Component {
     });
   };
 
+  onSaveButtonClick = (click) => {
+    click.preventDefault();
+
+    const { cardName, cardDescription, cardAttr1, cardAttr2,
+      cardAttr3, cardImage, cardRare } = this.state;
+    
+    const newCard = { cardName, cardDescription, cardAttr1, cardAttr2,
+      cardAttr3, cardImage, cardRare };
+    
+    this.setState((prevState) => ({
+      card: [...prevState.card, newCard],
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardImage: '',
+      cardRare: '',
+    }))
+  }
+
+
+
   onInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value }, this.validateBtn);
   };
@@ -47,6 +71,7 @@ class App extends React.Component {
         <Form
           { ...this.state }
           onInputChange={ this.onInputChange }
+          onSaveButtonClick={this.onSaveButtonClick}
         />
         <Card
           { ...this.state }
