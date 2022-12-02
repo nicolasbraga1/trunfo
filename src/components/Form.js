@@ -5,7 +5,7 @@ class Form extends Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
-      isSaveButtonDisabled, onInputChange, onSaveButtonClick } = this.props;
+      isSaveButtonDisabled, onInputChange, onSaveButtonClick, hasTrunfo } = this.props;
     return (
       <form>
         <label htmlFor="cardName">
@@ -108,7 +108,7 @@ class Form extends Component {
         </label>
         <br />
 
-        {cardTrunfo ? (
+        {hasTrunfo ? (
           <p>Você já tem um Super Trunfo em seu baralho</p>
         ) : (
           <label htmlFor="cardTrunfo">
