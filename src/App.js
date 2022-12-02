@@ -42,10 +42,15 @@ class App extends React.Component {
 
     const { cardName, cardDescription, cardAttr1, cardAttr2,
       cardAttr3, cardImage, cardRare } = this.state;
-    
-    const newCard = { cardName, cardDescription, cardAttr1, cardAttr2,
-      cardAttr3, cardImage, cardRare };
-    
+
+    const newCard = { cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare };
+
     this.setState((prevState) => ({
       card: [...prevState.card, newCard],
       cardName: '',
@@ -55,10 +60,8 @@ class App extends React.Component {
       cardAttr3: 0,
       cardImage: '',
       cardRare: '',
-    }))
-  }
-
-
+    }));
+  };
 
   onInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value }, this.validateBtn);
@@ -71,7 +74,7 @@ class App extends React.Component {
         <Form
           { ...this.state }
           onInputChange={ this.onInputChange }
-          onSaveButtonClick={this.onSaveButtonClick}
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           { ...this.state }
