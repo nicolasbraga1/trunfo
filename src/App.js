@@ -67,8 +67,8 @@ class App extends React.Component {
     }), () => {
       const { card } = this.state;
       card
-      .some((cart) => (cart.cardTrunfo ? this
-        .setState({ hasTrunfo: true }) : this.setState({ hasTrunfo: false })));
+        .some((cart) => (cart.cardTrunfo ? this
+          .setState({ hasTrunfo: true }) : this.setState({ hasTrunfo: false })));
     });
   };
 
