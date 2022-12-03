@@ -66,9 +66,8 @@ class App extends React.Component {
       cardRare: '',
     }), () => {
       const { card } = this.state;
-      card
-        .some((cart) => (cart.cardTrunfo ? this
-          .setState({ hasTrunfo: true }) : this.setState({ hasTrunfo: false })));
+      card.some((cart) => (cart.cardTrunfo ? this
+        .setState({ hasTrunfo: true }) : this.setState({ hasTrunfo: false })));
     });
   };
 
@@ -80,6 +79,7 @@ class App extends React.Component {
   };
 
   render() {
+    const { card } = this.state;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -92,6 +92,12 @@ class App extends React.Component {
           { ...this.state }
           onInputChange={ this.onInputChange }
         />
+        <ul>
+          {card.map((cards) => (
+            <Card key={ cards.cardName } { ...cards } />
+          ))}
+        </ul>
+
       </div>
     );
   }
