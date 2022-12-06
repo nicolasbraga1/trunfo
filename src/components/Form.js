@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 
 class Form extends Component {
   render() {
-    const { cardName, cardDescription, cardAttr1,
-      cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
-      isSaveButtonDisabled, onInputChange, onSaveButtonClick, hasTrunfo } = this.props;
+    const {
+      cardName, cardDescription, cardAttr1,
+      cardAttr2, cardAttr3, cardImage,
+      cardRare, cardTrunfo, isSaveButtonDisabled,
+      onInputChange, onSaveButtonClick, hasTrunfo,
+    } = this.props;
     return (
       <form>
         <label htmlFor="cardName">
